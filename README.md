@@ -1,0 +1,2 @@
+# dynamicwall
+Repozytorium strony Dynamicwall
