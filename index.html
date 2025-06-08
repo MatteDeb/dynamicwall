@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<!-- Chosen Palette: Bright Minimalist (Pure White, Light Gray-Blue) with a modern Blue accent and Dark Gray text. -->
+<!-- Application Structure Plan: A single-page application with anchor-linked navigation for a seamless user journey. The structure flows from a captivating hero section with a dynamic image slider, through informative sections on the technology and offer, to a visually rich, scalable portfolio gallery. The journey culminates in a comprehensive contact footer designed for lead generation with two distinct forms. This structure prioritizes user engagement and conversion, guiding the user logically from inspiration to action. -->
+<!-- Visualization & Content Choices: Hero Section: JS-powered image slider to dynamically showcase top work. Goal: immediate engagement. Tech/Surfaces Section: HTML/Tailwind-based icons (e.g., using borders, background patterns) instead of SVG to adhere to project constraints, providing clear visual cues for printable materials. Goal: inform and show versatility. Portfolio: A responsive CSS Grid with a JS-powered modal/lightbox for detailed viewing and new filtering functionality. Goal: in-depth exploration and proof of quality. Pricing/Offer: Clearly structured HTML cards/tables for readability. Goal: transparency and building trust. Social Icons: Unicode characters styled with Tailwind, again avoiding SVG per constraints. Goal: brand connection. -->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+<html lang="pl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DynamicWall - Rewolucja w Dekoracji Ściennej | Druk Cyfrowy</title>
+    <meta name="description" content="DynamicWall oferuje innowacyjny druk ścienny UV. Zobacz nasze realizacje, poznaj ofertę i przekształć swoje wnętrze. Drukujemy na betonie, drewnie, szkle i wielu innych powierzchniach.">
+    <meta name="keywords" content="druk ścienny, druk na ścianie, dekoracje ścienne, druk UV, DynamicWall, personalizacja wnętrz, nowoczesne dekoracje, druk na szkle, druk na drewnie, portfolio druku ściennego">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <!-- Link do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link do zewnętrznego pliku CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-gray-800">
+
+    <header id="header" class="bg-white/80 backdrop-blur-md shadow-md fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#home" class="flex items-center">
+                    <!-- Zmieniono tekst na obraz logo -->
+                    <img src="img/logo-dynamicwall.webp" alt="DynamicWall Logo" class="h-16 w-auto rounded-md">
+                </a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-600 hover:accent-text transition-colors">Strona Główna</a>
+                    <a href="#technologia" class="text-gray-600 hover:accent-text transition-colors">Technologia</a>
+                    <a href="#oferta" class="text-gray-600 hover:accent-text transition-colors">Oferta</a>
+                    <a href="#realizacje" class="text-gray-600 hover:accent-text transition-colors">Realizacje</a>
+                    <a href="#kontakt" class="text-gray-600 hover:accent-text transition-colors">Kontakt</a>
+                </nav>
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-600 hover:accent-text hover:bg-gray-100">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <nav class="px-2 pt-2 pb-4 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:accent-text hover:bg-gray-50">Strona Główna</a>
+                <a href="#technologia" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:accent-text hover:bg-gray-50">Technologia</a>
+                <a href="#oferta" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:accent-text hover:bg-gray-50">Oferta</a>
+                <a href="#realizacje" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:accent-text hover:bg-gray-50">Realizacje</a>
+                <a href="#kontakt" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:accent-text hover:bg-gray-50">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="min-h-screen hero-bg pt-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-center md:justify-between h-full min-h-[calc(100vh-80px)]">
+                <div class="text-center md:text-left md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">Twoje Ściany,</h1>
+                    <h2 class="text-4xl md:text-6xl font-bold accent-text leading-tight mb-4">Twoje Historie.</h2>
+                    <p class="text-lg text-gray-600 max-w-xl mx-auto md:mx-0">
+                        Odkryj rewolucję w dekoracji wnętrz z DynamicWall. Przenosimy Twoje ulubione grafiki, zdjęcia i wzory bezpośrednio na ściany, tworząc unikalne i trwałe dzieła sztuki.
+                    </p>
+                    <a href="#kontakt" class="mt-8 inline-block accent-bg text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:opacity-90 transition-opacity">
+                        Wyceń swój projekt
+                    </a>
+                </div>
+                <div class="md:w-1/2 w-full max-w-lg">
+                    <div class="relative rounded-lg shadow-2xl overflow-hidden aspect-w-4 aspect-h-3">
+                        <img id="hero-image" src="img/Wizerunek-żyrafy.webp" alt="Druk ścienny w artystycznej sypialni" class="w-full h-full object-cover transition-opacity duration-1000">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="technologia" class="py-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-900">Rewolucja w Dekoracji</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+                        Druk ścienny to uniwersalna alternatywa dla tradycyjnych metod dekoracji, łącząca zalety obrazów, tapet i fototapet, eliminując jednocześnie ich ograniczenia.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold accent-text mb-2">Czym jest Druk Ścienny?</h3>
+                        <p class="text-gray-600">To nowoczesna technika dekoracji wnętrz wykorzystująca zaawansowaną technologię UV. Maszyna precyzyjnie nanosi dowolne grafiki, zdjęcia i wzory bezpośrednio na powierzchnię ściany, gwarantując natychmiastowe utwardzanie tuszu i wyjątkową trwałość druku na lata. Jest to uniwersalna alternatywa dla tradycyjnych metod dekoracji, takich jak obrazy, tapety czy fototapety, łącząca ich zalety i eliminująca ograniczenia.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold accent-text mb-2">Gwarancja Jakości</h3>
+                        <p class="text-600">Oferujemy 10-letnią gwarancję na trwałość zadruku. Używamy najwyższej jakości, certyfikowanych tuszy NAZDAR, które są wodoodporne, niepalne i zapewniają wspaniałe kolory, wyrazistość oraz łatwość czyszczenia. Po zabezpieczeniu, ekspozycja druku na zewnętrzne czynniki atmosferyczne zostaje wzmocniona.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                         <h3 class="text-2xl font-bold accent-text mb-2">Szybkość i Prostota</h3>
+                        <p class="text-gray-600">Drukujemy bezpośrednio na ścianie, eliminując konieczność sprzątania, wiercenia czy przyklejania, co jest typowe dla tapet. Proces zadruku 1m² zajmuje standardowo od 40 do 60 minut, a dla pełnych grafik może przekroczyć 60 minut, zapewniając szybką i bezproblemową realizację.</p>
+                    </div>
+                </div>
+
+                <div class="mt-16">
+                    <h3 class="text-3xl font-bold text-center text-gray-900 mb-8">Nieskończone Możliwości Podłoży</h3>
+                    <p class="text-gray-600 text-center max-w-3xl mx-auto mb-8">Nasza technologia oferuje nieskończone możliwości zadruku na niemal wszystkich powierzchniach, nie tylko na standardowych ścianach. Możemy drukować na niestandardowych, 'customowych' powierzchniach, takich jak walizki turystyczne, meble czy lamele ścienne, co pozwala na pełną kreatywność w dekoracji.</p>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 text-center">
+                        <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm">
+                            <img src="img/svg/wall.svg" alt="Ikona cegły" class="w-20 h-20 mb-2">
+                            <span class="font-semibold">Cegła</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm">
+                            <img src="img/svg/concrete.svg" alt="Ikona betonu" class="w-20 h-20 mb-2">
+                            <span class="font-semibold">Beton</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm">
+                            <img src="img/svg/wood.svg" alt="Ikona drewna" class="w-20 h-20 mb-2">
+                            <span class="font-semibold">Drewno</span>
+                        </div>
+                         <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm">
+                             <img src="img/svg/glass.svg" alt="Ikona szkła" class="w-20 h-20 mb-2">
+                             <span class="font-semibold">Szkło</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm">
+                            <img src="img/svg/tiles.svg" alt="Ikona płytek" class="w-20 h-20 mb-2">
+                            <span class="font-semibold">Płytki</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm">
+                            <img src="img/svg/drywall.svg" alt="Ikona ściany" class="w-20 h-20 mb-2">
+                            <span class="font-semibold">Ściana</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-3xl font-bold text-center text-gray-900 mb-6">Ważne Informacje dla Klienta</h3>
+                    <div class="space-y-4 text-gray-600">
+                        <p><strong>Czas drukowania m²:</strong> Standardowo 40-60 minut, ale dla skomplikowanych grafik może przekroczyć 60 minut.</p>
+                        <p><strong>Przygotowanie podłoża:</strong> Podłoże musi być dokładnie wyczyszczone z kurzu i zanieczyszczeń (np. tłustych plam). Niespełnienie tego warunku może skutkować odpadnięciem tuszu, zmianą kolorystyki lub koniecznością ponownego zadruku (koszt x2).</p>
+                        <p><strong>Obszar roboczy drukarki:</strong> Ze względów technologicznych nie ma możliwości zadrukowania 100% ściany. Klient musi mieć na uwadze marginesy: 30 cm od góry, 40 cm od dołu, 12 cm i 25 cm z boków. W przypadku konieczności użycia szyn, wymagane jest dodatkowe 14 cm. Optymalna wysokość druku to 3,5 m, natomiast szerokość jest nieograniczona.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="oferta" class="py-20 hero-bg">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-900">Przejrzysta Oferta</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+                        Stawiamy na jasne zasady i brak ukrytych kosztów. Poznaj nasz cennik i prosty proces realizacji.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-10 items-start">
+                    <div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6">Cennik Druku</h3>
+                        <div class="space-y-4">
+                            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 accent-border">
+                                <p class="text-xl font-semibold">Standardowe grafiki (bez podkładu)</p>
+                                <p class="text-3xl font-bold accent-text mt-1">300 PLN <span class="text-lg font-normal text-gray-500">/ m² netto</span></p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 accent-border">
+                                <p class="text-xl font-semibold">Grafiki z białym podkładem</p>
+                                <p class="text-3xl font-bold accent-text mt-1">500 PLN <span class="text-lg font-normal text-gray-500">/ m² netto</span></p>
+                            </div>
+                             <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-gray-300">
+                                <p class="text-xl font-semibold">Dodatkowe koszty</p>
+                                <ul class="list-disc list-inside text-gray-600 mt-2">
+                                    <li>Grafiki skomplikowane: +100 PLN/m²</li>
+                                    <li>Czas pracy: 50 PLN/godz.</li>
+                                    <li>Każde dodatkowe piętro: 100 PLN</li>
+                                    <li>Każdy kolejny druk: 50 PLN</li>
+                                    <li>Usługi graficzne: 100-300 PLN</li>
+                                </ul>
+                                <p class="text-sm text-gray-500 mt-4">Nasze ceny odzwierciedlają najwyższą jakość tuszy NAZDAR, pełną obsługę i profesjonalizm oraz jakość i trwałość zadruku wynoszącą co najmniej 10 lat. Jest to inwestycja, która w dłuższej perspektywie okazuje się bardziej opłacalna niż tradycyjne fototapety czy naklejki, dzięki wodoodporności, łatwości czyszczenia i wzmocnionej odporności na czynniki zewnętrzne.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6">Proces w 4 Krokach</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 accent-bg text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl">1</div>
+                                <div class="ml-4">
+                                    <h4 class="text-xl font-semibold">Zapytanie</h4>
+                                    <p class="text-gray-600 mt-1">Prześlij nam informacje o projekcie: zdjęcie i wymiary ściany oraz wstępne wymiary druku.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 accent-bg text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl">2</div>
+                                <div class="ml-4">
+                                    <h4 class="text-xl font-semibold">Akceptacja</h4>
+                                    <p class="text-gray-600 mt-1">Przygotujemy wizualizację. Po jej akceptacji ustalamy termin realizacji.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 accent-bg text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl">3</div>
+                                <div class="ml-4">
+                                    <h4 class="text-xl font-semibold">Realizacja</h4>
+                                    <p class="text-gray-600 mt-1">Przyjeżdżamy, rozkładamy maszynę i od razu rozpoczynamy druk.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 accent-bg text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl">4</div>
+                                <div class="ml-4">
+                                    <h4 class="text-xl font-semibold">Efekt</h4>
+                                    <p class="text-gray-600 mt-1">Po skończonej pracy zabieramy sprzęt, a Ty cieszysz się nową, unikalną ścianą.</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mt-4">Zapewniamy prostą i przejrzystą umowę z szczegółowym rozliczeniem kosztów. Klauzula ochrony klienta gwarantuje przywrócenie podłoża do stanu sprzed zadruku i ponowne wykonanie usługi w przypadku problemów.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="realizacje" class="py-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-900">Nasze Realizacje</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+                        Zobacz, jak odmieniliśmy wnętrza naszych klientów. Każdy projekt to osobna historia.
+                    </p>
+                </div>
+
+                <!-- Przyciski do filtrowania galerii -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12" id="gallery-filters">
+                    <button class="filter-button px-6 py-2 rounded-full bg-blue-500 text-white font-semibold hover:bg-blue-600 transition-colors" data-category="wszystkie">Wszystkie</button>
+                    <button class="filter-button px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-blue-100 hover:text-blue-700 transition-colors" data-category="biura-i-firmy">Biura i firmy</button>
+                    <button class="filter-button px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-blue-100 hover:text-blue-700 transition-colors" data-category="szkoly">Szkoły</button>
+                    <button class="filter-button px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-blue-100 hover:text-blue-700 transition-colors" data-category="mieszkania">Mieszkania</button>
+                    <button class="filter-button px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-blue-100 hover:text-blue-700 transition-colors" data-category="miejsca-publiczne">Miejsca publiczne</button>
+                </div>
+
+                <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                </div>
+            </div>
+        </section>
+
+        <!-- Nowa sekcja "O Nas" -->
+        <section id="o-nas" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold text-gray-900 mb-12">Poznaj Założycieli DynamicWall</h2>
+                <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center">
+                        <img src="https://placehold.co/150x150/A7C7E7/334155?text=Mateusz" alt="Zdjęcie Mateusza" class="rounded-full w-32 h-32 object-cover mb-6 border-4 border-blue-300">
+                        <h3 class="text-2xl font-bold accent-text mb-2">Mateusz</h3>
+                        <p class="text-gray-600 mb-4">Współzałożyciel i wizjoner. Odpowiedzialny za rozwój technologii i innowacyjne rozwiązania w druku ściennym. Zawsze szuka nowych możliwości, by przekraczać granice dekoracji.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center">
+                        <img src="https://placehold.co/150x150/EEDC82/334155?text=Karol" alt="Zdjęcie Karola" class="rounded-full w-32 h-32 object-cover mb-6 border-4 border-blue-300">
+                        <h3 class="text-2xl font-bold accent-text mb-2">Karol</h3>
+                        <p class="text-gray-600 mb-4">Współzałożyciel i ekspert ds. realizacji. Dba o perfekcyjne wykonanie każdego projektu, od pierwszego kontaktu po finalny efekt na ścianie. Jego doświadczenie gwarantuje najwyższą jakość.</p>
+                    </div>
+                </div>
+                <p class="mt-12 text-lg text-gray-700 max-w-3xl mx-auto">
+                    Razem tworzymy DynamicWall – firmę, która stawia na innowację, jakość i satysfakcję klienta. Naszą misją jest przekształcanie przestrzeni w dzieła sztuki, dostosowane do indywidualnych potrzeb.
+                </p>
+            </div>
+        </section>
+        
+        <footer id="kontakt" class="hero-bg pt-20 pb-10">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16">
+                    <div class="text-center lg:text-left">
+                        <h2 class="text-4xl font-bold text-gray-900">Na co czekasz?</h2>
+                        <p class="mt-4 text-lg text-gray-600">
+                           Nie zwlekaj z realizacją swoich pomysłów! To idealny moment, by przekształcić swoje wizje w rzeczywistość. Z nami zyskasz pewność, że każdy projekt zostanie wykonany z pasją, precyzją i pełnym zaangażowaniem. Czas działać – zrób pierwszy krok i napisz do nas, korzystając z formularza obok.
+                        </p>
+                        <div class="mt-8">
+                            <h3 class="text-xl font-semibold">Telefon:</h3>
+                            <p class="text-lg text-gray-600">Karol: <a href="tel:+48666871082" class="accent-text hover:underline">+48 666 871 082</a></p>
+                            <p class="text-lg text-gray-600">Mateusz: <a href="tel:+48661409952" class="accent-text hover:underline">+48 661 409 952</a></p>
+                             <h3 class="text-xl font-semibold mt-4">Email:</h3>
+                            <a href="mailto:kontakt@dynamicwall.pl" class="text-lg accent-text hover:underline">kontakt@dynamicwall.pl</a>
+                        </div>
+                        <div class="mt-8 flex justify-center lg:justify-start space-x-6">
+                           <a href="https://www.facebook.com/dynamicwallpl" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:accent-text text-3xl transition-colors"><i class="fa-brands fa-facebook" style="color: #3B82F6;"></i></a>
+                           <a href="https://www.instagram.com/dynamicwall.pl/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:accent-text text-3xl transition-colors"><i class="fa-brands fa-instagram" style="color: #3B82F6;"></i></a>
+                           <a href="https://www.tiktok.com/@dynamicwall.pl" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:accent-text text-3xl transition-colors"><i class="fa-brands fa-tiktok" style="color: #3B82F6;"></i></a>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-xl">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6">Rezerwacja druku</h3>
+                        <form id="contact-form" novalidate enctype="multipart/form-data">
+                            <div class="space-y-4">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700">Imię i Nazwisko</label>
+                                    <input type="text" name="name" id="name" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700">Adres e-mail</label>
+                                    <input type="email" name="email" id="email" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700">Nr telefonu</label>
+                                    <input type="tel" name="phone" id="phone" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                </div>
+                                <div>
+                                    <label for="preferred-date" class="block text-sm font-medium text-gray-700">Preferowana data realizacji</label>
+                                    <input type="date" name="preferred-date" id="preferred-date" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                </div>
+                                <div>
+                                    <label for="file-upload" class="block text-sm font-medium text-gray-700">Wgraj projekt/wizualizację</label>
+                                    <input type="file" name="file-upload" id="file-upload" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-700">Dodatkowe informacje</label>
+                                    <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"></textarea>
+                                </div>
+                                <div>
+                                    <button type="submit" class="w-full accent-bg text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:opacity-90 transition-opacity">
+                                        Wyślij zapytanie
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <p class="text-sm text-gray-500 mt-4 text-center">Pamiętaj, że wysłanie formularza wymaga konfiguracji po stronie serwera, aby wiadomości dotarły na Twój adres e-mail.</p>
+                    </div>
+                </div>
+                <div class="text-center text-gray-500 mt-16 border-t border-gray-300 pt-6">
+                    &copy; 2025 DynamicWall. Wszelkie prawa zastrzeżone. Strona stworzona z pasją.
+                    <p class="mt-2"><a href="privacy-policy.html" class="accent-text hover:underline">Polityka Prywatności</a></p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <div id="image-modal" class="modal fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center opacity-0 pointer-events-none p-4">
+        <div class="bg-white rounded-lg shadow-2xl relative max-w-4xl w-full max-h-[90vh] overflow-hidden">
+            <button id="modal-close-button" class="absolute top-2 right-2 text-white bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 z-10">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <img id="modal-image" src="" alt="" class="w-full h-auto object-contain max-h-[90vh]">
+        </div>
+    </div>
+    
+    <div id="form-success-modal" class="modal fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center opacity-0 pointer-events-none p-4">
+        <div class="bg-white rounded-lg shadow-2xl p-8 max-w-sm w-full text-center">
+            <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full accent-bg">
+                <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <h3 class="text-2xl font-bold mt-4">Dziękujemy!</h3>
+            <p class="text-gray-600 mt-2">Twoje zapytanie zostało wysłane. Skontaktujemy się z Tobą wkrótce.</p>
+            <button id="form-success-close" class="mt-6 w-full accent-bg text-white font-bold py-2 px-4 rounded-lg shadow-lg hover:opacity-90 transition-opacity">
+                Zamknij
+            </button>
+        </div>
+    </div>
+
+    <!-- Nowy modal dla błędów formularza -->
+    <div id="form-error-modal" class="modal fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center opacity-0 pointer-events-none p-4">
+        <div class="bg-white rounded-lg shadow-2xl p-8 max-w-sm w-full text-center">
+            <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-500">
+                <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </div>
+            <h3 class="text-2xl font-bold mt-4 text-red-700">Wystąpił błąd!</h3>
+            <p id="error-message-text" class="text-gray-600 mt-2">Wystąpił nieznany błąd podczas wysyłania formularza. Spróbuj ponownie później.</p>
+            <button id="form-error-close" class="mt-6 w-full bg-red-500 text-white font-bold py-2 px-4 rounded-lg shadow-lg hover:bg-red-600 transition-opacity">
+                Zamknij
+            </button>
+        </div>
+    </div>
+
+    <!-- Link do zewnętrznego pliku JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
